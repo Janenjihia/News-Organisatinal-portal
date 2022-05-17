@@ -32,34 +32,11 @@ In the database, model User maps to table users, model Department maps to table 
 News and model DepartmentNews map to one table news through single table inheritance.
 
 Three dao interfaces and their corresponding implementation classes;
-- Interface UserDao implemented by class Sql2oUserDao, handles CRUD data operations related to model User.
+- Interface EmployeeDao implemented by class Sql2oEmployeeDao, handles CRUD data operations related to model User.
 - Interface NewsDao implemented by class Sql2oNewsDao, handles CRUD data operations related to model News and DepartmentNews.
 - Interface DepartmentDao implemented by class Sql2oDepartmentDao, handles CRUD data operations related to model Department.
 
 
-# Client Side
-
-The client interface is provided through a browser. The landing page by default shows all users.
-The landing page has tabs to view;
-- Users
-- Departments
-- General news
-- Department news
-
-On each tab, the user is able to see a listing of that category. Each tab has a form where a users can add
-corresponding items, i.e;
-- The users tab has a form to add users,
-- The departments tab has a form to add departments,
-- The general news tab has a tab to add news to the general category
-- The department news tab has a form to add news to a specific department.
-
-If a user tries to add a user or a department that already exist, they are alerted that that department already exists.
-
-The departments tab in addition to showing a new department form and a listing of all departments,
-each department list items has options to view all users in that department, or all news in that department.
-
-On clicking this tags, the user can click the departments tab to go back the main departments listing, from which they
-can narrow down to another departments users or news.
 ## Setup Instructions
 Fork the project on github  https://github.com/Janenjihia/upgraded-fiesta.git then clone it to your local repo.
 
