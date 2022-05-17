@@ -9,15 +9,14 @@ public class Employee {
     private int departmentId;
     private int id;
 
-    public Employee(String employeeName, String position, String role, String email, String phoneNumber, int departmentId) {
+    public Employee(String employeeName, String position, String role,int departmentId) {
         this.employeeName = employeeName;
         this.position = position;
         this.role = role;
         this.departmentId = departmentId;
     }
 
-    public Employee(String employeeName, String position, String role, int departmentId) {
-    }
+
 
     public String getEmployeeName() {
         return employeeName;

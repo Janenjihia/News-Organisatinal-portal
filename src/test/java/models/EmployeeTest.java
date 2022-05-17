@@ -30,7 +30,7 @@ class EmployeeTest {
     @Test
     void getRole() {
         Employee Employee = setUpEmployee();
-        assertEquals("auditor", Employee.getRole());
+        assertEquals("Audit", Employee.getRole());
     }
 
 
