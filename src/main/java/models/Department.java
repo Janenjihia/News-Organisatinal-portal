@@ -41,6 +41,9 @@ public class Department {
     public int getId() {
         return id;
     }
+    public String getName() {
+        return departmentName;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -58,4 +61,6 @@ public class Department {
     public int hashCode() {
         return Objects.hash(departmentName, description, numberOfEmployees, id);
     }
+
+
 }
