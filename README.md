@@ -21,10 +21,8 @@ The user would like to;
 ## How it works
 
 The application has four model classes;
-
-- User
+-Employee
 - News
-- DepartmentNews
 - Department
 
 DepartmentNews inherits from News.
