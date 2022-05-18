@@ -67,4 +67,8 @@ public class Employee {
         return departmentId == employee.departmentId && id == employee.id && employeeName.equals(employee.employeeName) && position.equals(employee.position) && role.equals(employee.role);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeName, position, role, departmentId, id);
+    }
 }
