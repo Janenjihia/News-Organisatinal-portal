@@ -45,20 +45,20 @@ public class App {
 
 
         // Find Department by id
-        get("/departments/:id", "application/json", (request, response) -> {
+        get("/departments/id", "application/json", (request, response) -> {
             int departmentId = Integer.parseInt(request.params("id"));
             return gson.toJson(sql2oDepartmentDao.findById(departmentId));
         });
 
         //Find all Employees in a Department
-        get("/departments/:departmentId/employees", "application/json", (request, response) -> {
+        get("/departments/departmentId/employees", "application/json", (request, response) -> {
             int departmentId = Integer.parseInt(request.params("departmentId"));
             return  gson.toJson(sql2oDepartmentDao.getAllEmployeesByDepartment(departmentId));
         });
 
 
         //Create New Employee
-        post("/departments/:departmentId/employee/new", "application/json", (request, response) -> {
+        post("/departments/departmentId/employee/new", "application/json", (request, response) -> {
             int departmentId = Integer.parseInt(request.params("departmentId"));
             Department newDepartment = sql2oDepartmentDao.findById(departmentId);
             Employee employee = gson.fromJson(request.body(), Employee.class);
@@ -78,7 +78,7 @@ public class App {
         });
 
         //Find Employee by Id
-        get("/employee/:id", "application/json", (request, response) -> {
+        get("/employee/id", "application/json", (request, response) -> {
             int employeeId = Integer.parseInt(request.params("id"));
             return gson.toJson(sql2oEmployeeDao.findById(employeeId));
         });

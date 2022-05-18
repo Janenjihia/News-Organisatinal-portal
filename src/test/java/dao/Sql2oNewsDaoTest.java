@@ -1,16 +1,17 @@
 package dao;
+
 import models.Department;
+import models.News;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+class Sql2oNewsDaoTest {
 
-public class Sql2oDepartmentDaoTest {
     private Sql2oDepartmentDao sql2oDepartmentDao;
     private static Connection conn;
 
