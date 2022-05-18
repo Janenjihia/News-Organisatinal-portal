@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Sql2oNewsDaoTest {
 
-    private Sql2oDepartmentDao sql2oDepartmentDao;
+    Sql2oNewsDao sql2oNewsDao;
     private static Connection conn;
 
 
@@ -20,36 +20,35 @@ class Sql2oNewsDaoTest {
     public void setup() {
         String connect = "jdbc:postgresql://localhost:5432/your_news";
         Sql2o sql2o = new Sql2o(connect, "jane", "2022@1234" );
-        Sql2oDepartmentDao sql2oDepartmentDao1=new Sql2oDepartmentDao(sql2o);
+        Sql2oNewsDao sql2oNewsDao=new Sql2oNewsDao(sql2o);
         conn = sql2o.open();
     }
 
     @Test
-    public void  add_addsNewDepartment_true(){
-        Department department = new Department( "blog","lifestyle blog","3");
-        int id = department.getId();
-        sql2oDepartmentDao.add(department);
-        assertNotEquals(id,department.getId());
+    public void  add_addsNews_true(){
+        News news =new News("Tourism", "Nile perch", 8);
+        int id = news.getId();
+        sql2oNewsDao.add(news);
+        assertNotEquals(id,news.getId());
     }
 
     @Test
-    public void  geAll_returnsDepartments_true(){
-        Department department = new Department( "blog","lifestyle blog","3");
-        Department department2 = new Department( "blog","lifestyle blog","3");
-        sql2oDepartmentDao.add(department);
-        sql2oDepartmentDao.add(department2);
+    public void  geAll_returnsNews_true(){
+        News news =new News("Tourism", "Nile perch", 8);
+        News news2 =new News("Tourism", "Nile perch", 8);
+        sql2oNewsDao.add(news);
+        sql2oNewsDao.add(news2);
         int expected = 2;
-        assertEquals(expected,sql2oDepartmentDao.getAll().size());
+        assertEquals(expected,sql2oNewsDao.getAll().size());
     }
 
 
     @Test
     public void deleteById_DeletesCorrectMentor_true() {
-        Department department = new Department( "blog","lifestyle blog","3");
-        sql2oDepartmentDao.add(department);
-
-        sql2oDepartmentDao.deleteById(department.getId());
-        assertEquals(0, sql2oDepartmentDao.getAll().size());
+        News news =new News("Tourism", "Nile perch", 8);
+        sql2oNewsDao.add(news);
+        sql2oNewsDao.deleteById(news.getId());
+        assertEquals(0, sql2oNewsDao.getAll().size());
     }
 
 

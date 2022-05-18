@@ -2,6 +2,7 @@ package Interfaces;
 
 import models.News;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface NewsDao {
@@ -10,7 +11,7 @@ public interface NewsDao {
     void add(News news);
 
     //Read
-    List<News> getall();
+    List<News> getAll();
     List<News> getAllNewsByDepartment(int departmentId);
     News findById(int id);
 
@@ -20,4 +21,5 @@ public interface NewsDao {
     //Delete
     void deleteById(int id);
     void clearAll();
+
 }
