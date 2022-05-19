@@ -1,4 +1,4 @@
-### Newsportal
+### Your-news
 
 Author JANE NJIHIA
 
